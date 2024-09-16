@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign In</title>
+</head>
+<body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <h1>Google Signin</h1>
+    <hr>
+    
+    <div id="g_id_onload"
+        data-client_id="904552358802-hje71743k6f56mf3c6h1tevq41o1dq3o.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"
+        data-auto_prompt="false"
+        data-auto_select="true">
+    </div>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
+    </div>
+    
+    <script>
+        function handleCredentialResponse(response) {
+            // Google token
+            console.log('ID_TOKEN', response.credential);
+        }
+    </script>
+</body>
+</html>
