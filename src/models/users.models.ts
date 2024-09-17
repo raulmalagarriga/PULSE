@@ -1,11 +1,17 @@
 import mongoose , {Schema, Document} from "mongoose";
+
+enum TypeUser {
+    Admin, // 0
+    Trainer, // 1
+    Client // 2
+}
 // USER MODEL
 export interface IUser extends Document{
     username: string;
     email: string;
     password: string;
     fullname: string;
-    type: number
+    type: TypeUser
 };
 const userSchema: Schema = new Schema({
     username: { type: String, required: true, unique: true},
