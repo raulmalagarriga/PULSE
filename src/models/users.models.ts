@@ -1,6 +1,6 @@
 import mongoose , {Schema, Document} from "mongoose";
 
-enum TypeUser {
+export enum TypeUser {
     Admin, // 0
     Trainer, // 1
     Client // 2
