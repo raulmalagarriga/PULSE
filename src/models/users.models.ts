@@ -1,4 +1,3 @@
-import { required } from "joi";
 import mongoose , {Schema, Document} from "mongoose";
 
 export enum TypeUser {
@@ -32,7 +31,7 @@ const userSchema: Schema = new Schema({
     email: { type: String, required: true, unique: true},
     password: { type: String, required: true},
     profileImage:{type:String, required:false},
-    salt:{type:String, require:true},
+    salt:{type:String, required:false},
     fullname: {type: String, required: true},
     type: {type: Number, required: true},
     createdAt: {type: Date, default: Date.now},
