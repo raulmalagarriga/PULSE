@@ -1,16 +1,11 @@
 import { Router } from 'express';
 import { verifyToken } from '../utils/security';
+import { createTrainerController, getTrainerByIdController, getTrainersController } from '../controllers/trainer.controller';
 const router = Router();
 
 // ROUTES
-// router.get('/', verifyToken, getUsersController);
-
-// router.get('/:id', getUserByIdController);
-
-// router.post('/', validateUser, createUserController);
-
-// router.put('/:id', validateUser, updateUserController);
-
-// router.delete('/:id', deleteUserController);
+router.get('/', verifyToken, getTrainersController);
+router.get('/:id', verifyToken, getTrainerByIdController);
+router.post('/', verifyToken, createTrainerController);
 
 export default router;
